@@ -19,7 +19,7 @@ public class MyContentProvider extends ContentProvider {
     public static final String COLUMN6_NAME = "ULTIMATE";
     public static final String COLUMN7_NAME = "PRICE";
 
-    public static final String AUTHORITY = "com.example.database";
+    public static final String AUTHORITY = "com.test.database";
     public static final Uri contentURI = Uri.parse("content://" + AUTHORITY + "/" + DBNAME);
     private MainDatabaseHelper SQLHelper;
     private static final String CREATE_DB_QUERY = "CREATE TABLE " + TABLE_NAME + //SQL query

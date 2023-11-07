@@ -1,4 +1,15 @@
 <resources>
     <string name="app_name">Test1_Coding</string>
     <string name="headline">Search our Funko Pop Database!</string>
+    <string name="headline3">Our Pop Database!</string>
+    <string name="headline2">Add to Funko Pop Database!</string>
+    <string name="name">Pop Name</string>
+    <string name="number">Pop Number</string>
+    <string name="type">Pop Type</string>
+    <string name="fandom">Pop Fandom</string>
+    <string name="on">Is it on?</string>
+    <string name="ultimate">Pop Ultimate</string>
+    <string name="price">Pop Price</string>
+    <string name="save">Save</string>
+    <string name="add">Add to Database</string>
 </resources>

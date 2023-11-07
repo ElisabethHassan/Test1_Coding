@@ -2,30 +2,39 @@ package com.example.test1_coding;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.ContentValues;
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.EditText;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    EditText searchName, searchNumber;
     TextView headline;
+    ListView listview;
+    Button addButton;
+
+    View.OnClickListener addListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(MainActivity.this, FunkoPopActivity.class);
+            startActivity(intent);
+        }
+    };
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        ContentValues newValues = new ContentValues();
-        if(!newValues.containsKey(searchName.getText().toString()))  {
-            newValues.put(MyContentProvider.COLUMN1_NAME, searchName.getText().toString() );
-        } else Toast.makeText(getApplicationContext(), "This Funko Pop exits in our database!", Toast.LENGTH_SHORT).show();
-        if(!newValues.containsKey(searchNumber.getText().toString())) {
-            newValues.put(MyContentProvider.COLUMN2_NAME, searchNumber.getText().toString() );
-        } else Toast.makeText(getApplicationContext(), "This Funko Pop exits in our database!", Toast.LENGTH_SHORT).show();
+        setContentView(R.layout.activity_funko_pop);
 
-        //inserts data into the database through content URI
-        getContentResolver().insert(MyContentProvider.contentURI, newValues);
+        listview = findViewById(R.id.listview_id);
+        addButton = findViewById(R.id.button2);
+        headline = findViewById(R.id.headline3_id);
+
+        addButton.setOnClickListener(addListener);
 
 
     }
