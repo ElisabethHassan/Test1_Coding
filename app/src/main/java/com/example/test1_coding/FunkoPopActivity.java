@@ -3,6 +3,7 @@ package com.example.test1_coding;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -19,7 +20,6 @@ public class FunkoPopActivity extends AppCompatActivity {
     TextView headline;
     Button saveButton;
     Switch aSwitch;
-    LinkedList<String> funkoPopNames = new LinkedList<>();
 
     View.OnClickListener saveListener = new View.OnClickListener() {
         @Override
@@ -32,7 +32,6 @@ public class FunkoPopActivity extends AppCompatActivity {
             Double priceD = Double.parseDouble(price.getText().toString());
             boolean switchResult = aSwitch.isChecked();
 
-            funkoPopNames.add(nameStr);
 
             ContentValues values = new ContentValues();
             values.put(MyContentProvider.COLUMN1_NAME, nameStr);
@@ -52,6 +51,12 @@ public class FunkoPopActivity extends AppCompatActivity {
                 // Failed to add the figure
                 Toast.makeText(FunkoPopActivity.this, "Failed to add FunkoPop figure", Toast.LENGTH_SHORT).show();
             }
+
+            Intent intent = new Intent(FunkoPopActivity.this, MainActivity.class );
+            Bundle bundle = new Bundle();
+            bundle.putString("name", nameStr);
+            intent.putExtras(bundle);
+            startActivity(intent);
 
         }
     };

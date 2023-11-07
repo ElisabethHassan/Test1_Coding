@@ -23,7 +23,7 @@ public class MyContentProvider extends ContentProvider {
     public static final Uri contentURI = Uri.parse("content://" + AUTHORITY + "/" + DBNAME);
     private MainDatabaseHelper SQLHelper;
     private static final String CREATE_DB_QUERY = "CREATE TABLE " + TABLE_NAME + //SQL query
-            "(_ID INTEGER PRIMARY KEY," +
+            "(_ID INTEGER PRIMARY KEY, " +
             COLUMN1_NAME + "TEXT,"
             + COLUMN2_NAME + "TEXT,"
             +COLUMN3_NAME + "TEXT,"
